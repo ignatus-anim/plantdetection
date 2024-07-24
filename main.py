@@ -1,76 +1,3 @@
-# from typing import Annotated
-
-# from fastapi import FastAPI, File, Form, UploadFile
-# from fastapi.middleware.cors import CORSMiddleware
-# import uvicorn
-# import numpy as np
-# from io import BytesIO
-# from PIL import Image
-# import tensorflow as tf
-# import json
-
-# app = FastAPI()
-
-# origins = [
-#     "http://localhost:8081",
-#     "http://localhost",
-#     "http://localhost:3000",
-# ]
-# app.add_middleware(
-#     CORSMiddleware,
-#     allow_origins=origins,
-#     allow_credentials=True,
-#     allow_methods=["*"],
-#     allow_headers=["*"],
-# )
-
-
-# # Load the model when the app starts
-
-# # Read solutions data from JSON
-
-
-# @app.get("/ping")
-# async def ping():
-#     return "Hello, I am alive"
-
-
-# def read_file_as_image(data) -> np.ndarray:
-#     image = Image.open(BytesIO(data)).resize((128, 128))
-#     image = np.array(image)
-#     if image.shape[-1] == 4:  # Check if the image has an alpha channel
-#         image = image[..., :3]  # Remove the alpha channel
-#     return image
-
-
-# @app.post("/predict")
-# async def predict(crop: Annotated[str, Form()], file: UploadFile = File(...)):
-#     image = read_file_as_image(await file.read())
-#     img_batch = np.expand_dims(image, 0)
-
-#     with open(f"solutions/{crop.lower()}_solution.json", "r") as solutions_file:
-#         SOLUTIONS = json.load(solutions_file)
-#     MODEL = tf.keras.models.load_model(f"models/{crop.lower()}.keras")
-
-#     predictions = MODEL.predict(img_batch)
-#     index = np.argmax(predictions[0])
-
-#     disease_info = SOLUTIONS[index]
-
-#     return {
-#         "class": disease_info["name"],
-#         "confidence": float(np.max(predictions[0])),
-#         "causes": disease_info["causes"],
-#         "recommended_solutions": disease_info["recommended_solutions"],
-#     }
-
-
-# if __name__ == "__main__":
-#     uvicorn.run(app, host="localhost", port=8000)
-
-
-
-
 from typing import Annotated
 
 from fastapi import FastAPI, File, Form, UploadFile
@@ -84,11 +11,8 @@ import json
 
 app = FastAPI()
 
-origins = [
-    "http://localhost:8081",
-    "http://localhost",
-    "http://localhost:3000",
-]
+origins = ["*"]
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
@@ -157,4 +81,6 @@ async def predict(crop: Annotated[str, Form()], file: UploadFile = File(...)):
     }
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="localhost", port=8000)
+    # uvicorn.run(app, host="localhost", port=8000)
+    port = int(os.environ.get("PORT", 8000))
+    uvicorn.run(app, host="0.0.0.0", port=port)
