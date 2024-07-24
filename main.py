@@ -8,6 +8,7 @@ from io import BytesIO
 from PIL import Image
 import tensorflow as tf
 import json
+import os
 
 app = FastAPI()
 
