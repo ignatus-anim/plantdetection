@@ -27,12 +27,14 @@ app.add_middleware(
 async def ping():
     return "Hello, I am alive"
 
+
 def read_file_as_image(data) -> np.ndarray:
     image = Image.open(BytesIO(data)).resize((128, 128))
     image = np.array(image)
     if image.shape[-1] == 4:  # Check if the image has an alpha channel
         image = image[..., :3]  # Remove the alpha channel
     return image
+
 
 def load_model_and_solution(crop):
     model_file = f"models/{crop}.tflite"
@@ -43,10 +45,11 @@ def load_model_and_solution(crop):
     interpreter.allocate_tensors()
 
     # Load crop diseases solutions
-    with open(solution_file, 'r') as solutions:
+    with open(solution_file, "r") as solutions:
         crop_diseases = json.load(solutions)
 
     return interpreter, crop_diseases
+
 
 def model_prediction(image, interpreter):
     input_arr = np.expand_dims(image, axis=0).astype(np.float32)
@@ -54,11 +57,12 @@ def model_prediction(image, interpreter):
     input_details = interpreter.get_input_details()
     output_details = interpreter.get_output_details()
 
-    interpreter.set_tensor(input_details[0]['index'], input_arr)
+    interpreter.set_tensor(input_details[0]["index"], input_arr)
     interpreter.invoke()
-    prediction = interpreter.get_tensor(output_details[0]['index'])
+    prediction = interpreter.get_tensor(output_details[0]["index"])
     result_index = np.argmax(prediction)
     return result_index, prediction
+
 
 @app.post("/predict")
 async def predict(crop: Annotated[str, Form()], file: UploadFile = File(...)):
@@ -78,10 +82,9 @@ async def predict(crop: Annotated[str, Form()], file: UploadFile = File(...)):
         "confidence": confidence,
         "causes": disease_info["causes"],
         "recommended_solutions": disease_info["recommended_solutions"],
-        "recommended_pesticide": disease_info["recommended_pesticide"]
+        "recommended_pesticide": disease_info["recommended_pesticide"],
     }
+
 
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8000)
-    # port = int(os.environ.get("PORT", 8000))
-    # uvicorn.run(app, host="0.0.0.0", port=port)
