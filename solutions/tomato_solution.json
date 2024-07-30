@@ -14,7 +14,8 @@
         ],
         "recommended_pesticide": [
             "Copper-based bactericides",
-            "Streptomycin sulfate"
+            "Streptomycin sulfate",
+            "Mancozeb"
         ]
     },
     {
@@ -34,7 +35,10 @@
         ],
         "recommended_pesticide": [
             "Chlorothalonil",
-            "Mancozeb"
+            "Mancozeb",
+            "Ziram",
+            "Maneb",
+            "Azoxystrobin"
         ]
     },
     {
@@ -54,7 +58,11 @@
         ],
         "recommended_pesticide": [
             "Chlorothalonil",
-            "Metalaxyl"
+            "Metalaxyl",
+            "Bravo",
+            "Echo",
+            "Mancozeb",
+            "Fluazinam"
         ]
     },
     {
@@ -72,7 +80,9 @@
         ],
         "recommended_pesticide": [
             "Chlorothalonil",
-            "Mancozeb"
+            "Mancozeb",
+            "Sulfate",
+            "Daconil"
         ]
     },
     {
@@ -90,11 +100,13 @@
             "Improve air circulation",
             "Water carefully",
             "Apply fungicides",
-            "Rotate crops"
+            "Rotate crops",
+            "Acquire certified disease free seeds"
         ],
         "recommended_pesticide": [
             "Chlorothalonil",
-            "Mancozeb"
+            "Mancozeb",
+            "Champion/Champ"
         ]
     },
     {
@@ -110,7 +122,11 @@
         ],
         "recommended_pesticide": [
             "Insecticidal soap",
-            "Neem oil"
+            "Neem oil",
+            "Abamectin",
+            "Nealta miticide",
+            "Bifentrin",
+            "Spiromesifen"
         ]
     },
     {
@@ -128,7 +144,8 @@
         ],
         "recommended_pesticide": [
             "Chlorothalonil",
-            "Mancozeb"
+            "Mancozeb",
+            "Azoxystrobin"
         ]
     },
     {
@@ -145,7 +162,8 @@
         ],
         "recommended_pesticide": [
             "Imidacloprid",
-            "Pyriproxyfen"
+            "Pyriproxyfen",
+            "Sivanto"
         ]
     },
     {

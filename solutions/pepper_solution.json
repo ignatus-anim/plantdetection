@@ -9,12 +9,14 @@
         "recommended_solutions": [
             "Plant resistant varieties",
             "Apply copper-based bactericides",
-            "Practice crop rotation",
+            "Practice crop rotation with non host crops",
             "Avoid overhead irrigation"
         ],
         "recommended_pesticide": [
             "Copper-based bactericides",
-            "Streptomycin sulfate"
+            "Streptomycin sulfate",
+            "Pencozeb",
+            "Quintec"
         ]
     },
     {
@@ -48,7 +50,8 @@
         ],
         "recommended_pesticide": [
             "Chlorothalonil",
-            "Mancozeb"
+            "Mancozeb",
+            "Miravis Prime"
         ]
     },
     {

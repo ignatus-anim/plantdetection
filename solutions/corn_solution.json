@@ -13,10 +13,16 @@
             "Improve air circulation",
             "Water carefully",
             "Apply fungicides",
-            "Rotate crops"
+            "Rotate crops",
+            "Plant resistant varieties"
         ],
         "recommended_pesticide": [
             "Mancozeb",
+            "Chlorothalonil",
+            "Heritage",
+            "Systhane",
+            "Azoxystrobin",
+            "Myclobutanil",
             "Chlorothalonil"
         ]
     },
@@ -37,7 +43,8 @@
         ],
         "recommended_pesticide": [
             "Propiconazole",
-            "Azoxystrobin"
+            "Azoxystrobin",
+            "Mancozeb"
         ]
     },
     {
@@ -57,7 +64,10 @@
         ],
         "recommended_pesticide": [
             "Azoxystrobin",
-            "Pyraclostrobin"
+            "Pyraclostrobin",
+            "Tebuconazole",
+            "Mancozeb",
+            "Chlorothalonil"
         ]
     },
     {
@@ -82,11 +92,12 @@
             "Remove infected leaves or plants",
             "Apply insecticides",
             "Rotate crops",
-            "Plant resistant varieties"
+            "Plant resistant varieties - Dorke SR"
         ],
         "recommended_pesticide": [
             "Imidacloprid",
-            "Lambda-cyhalothrin"
+            "Lambda-cyhalothrin",
+            "Imidacloprid"
         ]
     },
     {
